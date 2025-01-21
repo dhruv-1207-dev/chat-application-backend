@@ -1,6 +1,7 @@
 import * as bodyParser from 'body-parser'; // pull information from HTML POST (express4)
 import * as dotenv from 'dotenv';
 import * as express from 'express';
+import rateLimit from "express-rate-limit";
 import * as cors from 'cors';
 // tslint:disable-next-line: no-var-requires
 require('express-async-errors');
@@ -59,12 +60,25 @@ export class App {
       next();
     });
 
+    const apiLimiter = rateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // Limit each IP to 100 requests per windowMs
+      message: {
+        status: 429,
+        error: "Too many requests, please try again later.",
+      },
+      headers: true, // Include rate limit headers in the response
+      standardHeaders: true, // Return rate limit info in `RateLimit-*` headers
+      legacyHeaders: false, // Disable `X-RateLimit-*` headers
+    });
+
     this.app.use(fileUpload());
     const uploadsPath = path.join(__dirname, '../uploads');
     this.app.use('/uploads', express.static(uploadsPath));
 
     const routes = new Routes(NODE_ENV);
     this.app.use('/api/', routes.path());
+    this.app.use("/api", apiLimiter);
     const Server = this.app.listen(PORT, () => {
       this.logger.info(
         `The server is running in port localhost: ${process.env.PORT}`
