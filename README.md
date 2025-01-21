@@ -24,11 +24,13 @@ A modern chat application enabling real-time communication between registered us
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd <project-folder>
 
 2. Install dependencies
+
     ```bash
     node 18.20.4
     redis-cli
@@ -36,15 +38,16 @@ A modern chat application enabling real-time communication between registered us
 
 3. Set up environment variables:
 
-- Create a .env file in the root directory.
-- Add the necessary environment variables as shown in .env.example.
+  - Create a .env file in the root directory.
+  - Add the necessary environment variables as shown in .env.example.
 
 4. Start the application:
+
     ```bash
     npm start
 
 
 ## Usage
-- Register as a user or log in if you already have an account.
-- Start chatting with other registered users in real time.
-- Update your profile, including uploading a profile picture via drag-and-drop.
+ - Register as a user or log in if you already have an account.
+ - Start chatting with other registered users in real time.
+ - Update your profile, including uploading a profile picture via drag-and-drop.
