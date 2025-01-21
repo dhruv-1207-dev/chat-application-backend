@@ -51,3 +51,6 @@ A modern chat application enabling real-time communication between registered us
  - Register as a user or log in if you already have an account.
  - Start chatting with other registered users in real time.
  - Update your profile, including uploading a profile picture via drag-and-drop.
+
+## Postman Collection Link
+- [Chat Application API Collection](https://www.postman.com/flight-architect-84253443/workspace/patient-management-system/collection/13906941-d1a391b3-2a81-47c0-8506-7de4ed7fe362?action=share&creator=13906941&active-environment=13906941-ca32083d-e60d-49d9-a60b-7ccc641e9df7)
