@@ -1,0 +1,48 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "Chat Application",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "start": "tsc --watch & node --inspect dist",
+    "build": "tsc && mkdir -p uploads && mkdir -p dist/templates && cp -R src/templates/* dist/templates",
+    "build-dev": "tsc && mkdir -p uploads && mkdir -p dist/templates && cp -R src/templates/* dist/templates",
+    "build-stage": "tsc && mkdir -p uploads && mkdir -p dist/templates && cp -R src/templates/* dist/templates",
+    "build-prod": "tsc && mkdir -p uploads && mkdir -p dist/templates && cp -R src/templates/* dist/templates",
+    "env": "sync-dotenv --sample env.sample"
+  },
+  "keywords": [],
+  "author": "Dhruv Parmar",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.9.3",
+    "helmet": "^3.23.3",
+    "sync-dotenv": "^2.7.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.96",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.12.2",
+    "connect-busboy": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "enum": "^3.0.4",
+    "express": "^4.21.1",
+    "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.5.1",
+    "jm-ez-l10n": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.46",
+    "mongoose": "^8.8.2",
+    "morgan": "^1.10.0",
+    "node-uuid": "^1.4.8",
+    "redis": "^3.0.2",
+    "socket.io": "^2.3.0",
+    "winston": "^3.17.0"
+  }
+}
